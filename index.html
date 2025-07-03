@@ -9,9 +9,37 @@
   />
 
   <title>Milson António</title>
-  <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+  <link rel="icon" type="image/x-icon" href="static/imgs/code.ico" />
 
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <style>
+    /* Menu underline animation */
+    .menu-link {
+      position: relative;
+    }
+    .menu-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background-color: #000;
+      transition: width 0.3s ease;
+    }
+    .menu-link:hover::after {
+      width: 100%;
+    }
+
+    /* Logo zoom animation */
+    .logo-container {
+      transition: transform 0.3s ease;
+    }
+    .logo-container:hover {
+      transform: scale(1.05);
+    }
+  </style>
 </head>
 <body>
 
@@ -21,7 +49,7 @@
   <div class="layout-container flex h-full grow flex-col">
 
     <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f2f2f2] px-10 py-3">
-      <div class="flex items-center gap-4 text-black">
+      <div class="flex items-center gap-4 text-black logo-container">
         <a href="index.html">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="Code--Streamline-Font-Awesome" height="28" width="28">
             <desc>
@@ -36,10 +64,10 @@
       </div>
       <div class="flex flex-1 justify-end gap-8">
         <div class="flex items-center gap-9">
-          <a class="text-black text-sm font-medium leading-normal" href="index.html">Home</a>
-          <a class="text-black text-sm font-medium leading-normal" href="#most-recents">Most Recents</a>
-          <a class="text-black text-sm font-medium leading-normal" href="#list-articles">Articles</a>
-          <a class="text-black text-sm font-medium leading-normal" href="about.html">About</a>
+          <a class="text-black text-sm font-medium leading-normal menu-link" href="index.html">Home</a>
+          <a class="text-black text-sm font-medium leading-normal menu-link" href="#pinned">Pinned</a>
+          <a class="text-black text-sm font-medium leading-normal menu-link" href="#list-articles">Articles</a>
+          <a class="text-black text-sm font-medium leading-normal menu-link" href="about.html">About</a>
         </div>
       </div>
     </header>
@@ -70,102 +98,166 @@
                   built on a <span class="font-semibold px-1 bg-opacity-20 bg-white rounded">microservices-based</span> architecture.
                 </h2>
               </div>
-              <button
-                      class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-black text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]"
-              >
-                <span class="truncate">List of Articles</span>
-              </button>
+              <a href="#list-articles">
+                <button
+                        class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-black text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]"
+                >
+                  <span class="truncate">List of Articles</span>
+                </button>
+              </a>
             </div>
           </div>
         </div>
 
-        <h2 id="most-recents" class="text-black text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Most Recents</h2>
+        <h2 id="pinned" class="text-black text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">
+          <span class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" id="Pin-1--Streamline-Sharp" height="24" width="24">
+            <desc>
+              Pin 1 Streamline Icon: https://streamlinehq.com
+            </desc>
+            <g id="pin-1--pin-push-thumbtack">
+              <path id="Vector 48" stroke="#000000" d="m17.0001 12 4.5 -2.5 -7 -7 -2.5 4.5L3.5 10.5l10 10 3.5001 -8.5Z" stroke-width="1.5"></path>
+              <path id="Vector 118" stroke="#000000" d="m1.5 22.5 7 -7" stroke-width="1.5"></path>
+            </g>
+          </svg>
+            Pinned
+          </span>
+        </h2>
         <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
-          <div class="flex flex-col gap-3 pb-3">
-            <div
-                    class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
-                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDeu-nUfkLyDX-VUFz-HLnQXiWxPcj6l_MrPj__TZo4Vi0vAtjWw7aV6Ih2hjHDTRbnZIr2PAvIiPBgjmjQblvQOd0ve42i_25Bx3nvFJf7rekIfozLyK_wsAVSc2z_boWULdGm93qyV-OMHKWEzCRsRQ-PyGbQwsbIDClRmiHiZYueztOHyin4dvz_S03KQ7KfWt190kUvX2ZvnqpWNzrulwoiwdcYBcBLqz1QUvzqs5xc-WhYNnw2tJme5KiPGFuxeslW_L9PkuOG");'
-            ></div>
+
+          <div class="flex flex-col gap-3 pb-3 transition-transform duration-300 hover:scale-105">
+            <a href="articles/redesigning-a-mobile-app/redesigning-a-mobile-app.html">
+              <div
+                      class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
+                      style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDeu-nUfkLyDX-VUFz-HLnQXiWxPcj6l_MrPj__TZo4Vi0vAtjWw7aV6Ih2hjHDTRbnZIr2PAvIiPBgjmjQblvQOd0ve42i_25Bx3nvFJf7rekIfozLyK_wsAVSc2z_boWULdGm93qyV-OMHKWEzCRsRQ-PyGbQwsbIDClRmiHiZYueztOHyin4dvz_S03KQ7KfWt190kUvX2ZvnqpWNzrulwoiwdcYBcBLqz1QUvzqs5xc-WhYNnw2tJme5KiPGFuxeslW_L9PkuOG");'
+              ></div>
+            </a>
             <div>
-              <p class="text-black text-base font-medium leading-normal">Project: Redesigning a Mobile App</p>
+              <a href="articles/redesigning-a-mobile-app/redesigning-a-mobile-app.html">
+                <p class="text-black text-base font-medium leading-normal">Redesigning a Mobile App</p>
+              </a>
+              <a href="articles/redesigning-a-mobile-app/redesigning-a-mobile-app.html">
               <p class="text-black text-sm font-normal leading-normal">Redesigning a mobile app for a local business to improve user engagement and conversion rates.</p>
+              </a>
             </div>
           </div>
-          <div class="flex flex-col gap-3 pb-3">
-            <div
-                    class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
-                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBJYxFhnlINfghjQbisq1IqwN2fKYFNIU3OpGYqndlG5YfCQKJZ7gTkeZtzAmOIdk-8CDm26vH-bK3XXt-SiHBFwyw576XrMMtjDJNHozQrfMZJj-87tNVyO2tM2fBKwe_cqV8ja9XUCN4g0v1JIoZ44PSPVdnvbnCxnOOskMQMkKW_KzhspH0CdHlTRmUdZctBUJl5NdwWTgb-FgGOZ_2MV8dmbvI6joCfUQprr9ZnubFloO4LeOcIexckhLepqnFX-cxjhsoFbIfu");'
-            ></div>
+
+          <div class="flex flex-col gap-3 pb-3 transition-transform duration-300 hover:scale-105">
+            <a href="articles/redesigning-a-mobile-app/redesigning-a-mobile-app.html">
+              <div
+                      class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
+                      style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDeu-nUfkLyDX-VUFz-HLnQXiWxPcj6l_MrPj__TZo4Vi0vAtjWw7aV6Ih2hjHDTRbnZIr2PAvIiPBgjmjQblvQOd0ve42i_25Bx3nvFJf7rekIfozLyK_wsAVSc2z_boWULdGm93qyV-OMHKWEzCRsRQ-PyGbQwsbIDClRmiHiZYueztOHyin4dvz_S03KQ7KfWt190kUvX2ZvnqpWNzrulwoiwdcYBcBLqz1QUvzqs5xc-WhYNnw2tJme5KiPGFuxeslW_L9PkuOG");'
+              ></div>
+            </a>
             <div>
-              <p class="text-black text-base font-medium leading-normal">Project: Creating a Design System</p>
-              <p class="text-black text-sm font-normal leading-normal">Developing a comprehensive design system for a startup to ensure consistency and scalability.</p>
+              <a href="articles/redesigning-a-mobile-app/redesigning-a-mobile-app.html">
+                <p class="text-black text-base font-medium leading-normal">Redesigning a Mobile App</p>
+              </a>
+              <a href="articles/redesigning-a-mobile-app/redesigning-a-mobile-app.html">
+                <p class="text-black text-sm font-normal leading-normal">Redesigning a mobile app for a local business to improve user engagement and conversion rates.</p>
+              </a>
             </div>
           </div>
-          <div class="flex flex-col gap-3 pb-3">
-            <div
-                    class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
-                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAEA83O4I8EKGKlwHkDMKt0tm8fE7z2SLTFnupGGhhIzgOd6K1J9E_6xYJKxcb3Jh-G-MiPB7TedeHZw7Yjw9vMjmrIfQoQ1r9dK_vDHXrgGxslHS43kNKHIjcQXFic50CnZHv4repuvX210MRGxjdORU9_v2LCb2DYmTSnQyWYFcBV6PmkyABFaOxGgF_yIu6WKiv2tbJVs1WPbYpUdwzDwkrqtG4JFRkTR4GXlsGtdDWiRirbAm85SAeR7Wbj11vMKh-4n1S3iobd");'
-            ></div>
+
+          <div class="flex flex-col gap-3 pb-3 transition-transform duration-300 hover:scale-105">
+            <a href="articles/redesigning-a-mobile-app/redesigning-a-mobile-app.html">
+              <div
+                      class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
+                      style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDeu-nUfkLyDX-VUFz-HLnQXiWxPcj6l_MrPj__TZo4Vi0vAtjWw7aV6Ih2hjHDTRbnZIr2PAvIiPBgjmjQblvQOd0ve42i_25Bx3nvFJf7rekIfozLyK_wsAVSc2z_boWULdGm93qyV-OMHKWEzCRsRQ-PyGbQwsbIDClRmiHiZYueztOHyin4dvz_S03KQ7KfWt190kUvX2ZvnqpWNzrulwoiwdcYBcBLqz1QUvzqs5xc-WhYNnw2tJme5KiPGFuxeslW_L9PkuOG");'
+              ></div>
+            </a>
             <div>
-              <p class="text-black text-base font-medium leading-normal">Project: Building a Portfolio Website</p>
-              <p class="text-black text-sm font-normal leading-normal">Building a personal portfolio website to showcase design projects and articles.</p>
+              <a href="articles/redesigning-a-mobile-app/redesigning-a-mobile-app.html">
+                <p class="text-black text-base font-medium leading-normal">Redesigning a Mobile App</p>
+              </a>
+              <a href="articles/redesigning-a-mobile-app/redesigning-a-mobile-app.html">
+                <p class="text-black text-sm font-normal leading-normal">Redesigning a mobile app for a local business to improve user engagement and conversion rates.</p>
+              </a>
             </div>
           </div>
+
+
+
         </div>
 
         <h2 id="list-articles" class="text-black text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">List of Articles</h2>
+
+        <!-- article 1 -->
         <div class="p-4">
-          <div class="flex items-stretch justify-between gap-4 rounded-xl">
+          <div class="flex items-stretch justify-between gap-4 rounded-xl transition-transform duration-300 hover:scale-105">
             <div class="flex flex-col gap-1 flex-[2_2_0px]">
               <p class="text-black text-sm font-normal leading-normal">Article</p>
-              <p class="text-black text-base font-bold leading-tight">The Importance of User Research in Design</p>
+              <a href="articles/redesigning-a-mobile-app/redesigning-a-mobile-app.html">
+                <p class="text-black text-base font-bold leading-tight">Redesigning a Mobile App</p>
+              </a>
+              <a href="articles/redesigning-a-mobile-app/redesigning-a-mobile-app.html">
               <p class="text-black text-sm font-normal leading-normal">
-                Understanding user needs and behaviors is crucial for creating effective and user-centered designs.
+                Redesigning a mobile app for a local business to improve user engagement and conversion rates.
               </p>
+              </a>
             </div>
-            <div
-                    class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex-1"
-                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCkqJ9YGozkND0ibZdWvj6I7xPgUIv_94mMuaWSG1tUDkigj1_eWw5an4UQnRJTeDoKxFvMz4bD6N8t78ThTcCXijY8P-G5OhCH_RbUDjXGTOc4EfDT-y9bKK7XWnT8EFA1CnZR-KhIu55mqSmnw_lt3KMuXasTlcSiQcCEBhNy8Dwic1VRqspI9RWz0H9jFRcepPYDkCjmw33FeVDZCEl965YqWXszNQKaqm6NIvBbsAbXvFcZRMaZRQZK2W8AwEVIukT86SflNlKX");'
-            ></div>
+            <a href="articles/redesigning-a-mobile-app/redesigning-a-mobile-app.html">
+              <div
+                      class="w-[158px] h-[100px] bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
+                      style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDeu-nUfkLyDX-VUFz-HLnQXiWxPcj6l_MrPj__TZo4Vi0vAtjWw7aV6Ih2hjHDTRbnZIr2PAvIiPBgjmjQblvQOd0ve42i_25Bx3nvFJf7rekIfozLyK_wsAVSc2z_boWULdGm93qyV-OMHKWEzCRsRQ-PyGbQwsbIDClRmiHiZYueztOHyin4dvz_S03KQ7KfWt190kUvX2ZvnqpWNzrulwoiwdcYBcBLqz1QUvzqs5xc-WhYNnw2tJme5KiPGFuxeslW_L9PkuOG");'
+              ></div>
+            </a>
           </div>
         </div>
+
+        <!--
         <div class="p-4">
-          <div class="flex items-stretch justify-between gap-4 rounded-xl">
+          <div class="flex items-stretch justify-between gap-4 rounded-xl transition-transform duration-300 hover:scale-105">
             <div class="flex flex-col gap-1 flex-[2_2_0px]">
               <p class="text-black text-sm font-normal leading-normal">Article</p>
-              <p class="text-black text-base font-bold leading-tight">Mastering the Art of Prototyping</p>
+              <a href="articles/creating-a-design-system/creating-a-design-system.html">
+                <p class="text-black text-base font-bold leading-tight">Creating a Design System</p>
+              </a>
+              <a href="articles/creating-a-design-system/creating-a-design-system.html">
               <p class="text-black text-sm font-normal leading-normal">
-                Prototyping is an essential skill for designers to test and iterate on their ideas before development.
+                Developing a comprehensive design system for a startup to ensure consistency and scalability.
               </p>
+              </a>
             </div>
-            <div
-                    class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex-1"
-                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDMUTaneHT7vjkTVAi-KXe2LQnBhxNv-q-1hsNOmQbYH3cmW9yW2ArijC4kwDDOFRgmaS2QSa9BiOOt-SUm63C0870xxOAvyu8_gVx0_bAXkhg7Fh2Xd4bloDN6vp93k-glZm1BO3aQMB8d6nVxYyP4aMjcp_UhvtXYqsoVYW91gOvChAZZKNFSzT62TacNPtMBcMcfuu92hr6uEvp0Y6vMrVUnqcYd0rDGQdPE0BugBG5wKgUsZDK_fzvRSF2djiWKKQXzHimCmV-3");'
-            ></div>
+            <a href="articles/creating-a-design-system/creating-a-design-system.html">
+              <div
+                      class="w-[158px] h-[100px] bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
+                      style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBJYxFhnlINfghjQbisq1IqwN2fKYFNIU3OpGYqndlG5YfCQKJZ7gTkeZtzAmOIdk-8CDm26vH-bK3XXt-SiHBFwyw576XrMMtjDJNHozQrfMZJj-87tNVyO2tM2fBKwe_cqV8ja9XUCN4g0v1JIoZ44PSPVdnvbnCxnOOskMQMkKW_KzhspH0CdHlTRmUdZctBUJl5NdwWTgb-FgGOZ_2MV8dmbvI6joCfUQprr9ZnubFloO4LeOcIexckhLepqnFX-cxjhsoFbIfu");'
+              ></div>
+            </a>
           </div>
         </div>
+
         <div class="p-4">
-          <div class="flex items-stretch justify-between gap-4 rounded-xl">
+          <div class="flex items-stretch justify-between gap-4 rounded-xl transition-transform duration-300 hover:scale-105">
             <div class="flex flex-col gap-1 flex-[2_2_0px]">
               <p class="text-black text-sm font-normal leading-normal">Article</p>
-              <p class="text-black text-base font-bold leading-tight">Designing for Mobile-First</p>
+              <a href="articles/building-a-portfolio-website/building-a-portfolio-website.html">
+                <p class="text-black text-base font-bold leading-tight">Building a Portfolio Website</p>
+              </a>
+              <a href="articles/building-a-portfolio-website/building-a-portfolio-website.html">
               <p class="text-black text-sm font-normal leading-normal">
-                With the increasing use of mobile devices, designing for mobile-first is essential for reaching a wider audience.
+                Building a personal portfolio website to showcase design projects and articles.
               </p>
+              </a>
             </div>
-            <div
-                    class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex-1"
-                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAUXGNqIGGGdH1NDjaWbUNftIbvZ6ScgHCC4vC-xqg0bDzjG3YxcuoWF4i_cdmUyQcTe5N3RsnLK8D3eR2mj92IRwfahyVV6zrLqz7Fb-UDBz4NFJhFAnj7HR7tZiKavi6Acy-eNY2v9ZAUd2tW1UmAGP-M1gsJD86oES6OMGOeLwfkyPsPzlTq7f4M6EkDDBvTceuDonEwce5Le0gux80Ep05c8CXZ1HkegcSZcjHGK9-iPofJHqRUbneaozX6mKCInsKl0QDd3hoP");'
-            ></div>
+            <a href="articles/building-a-portfolio-website/building-a-portfolio-website.html">
+              <div
+                      class="w-[158px] h-[100px] bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
+                      style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAEA83O4I8EKGKlwHkDMKt0tm8fE7z2SLTFnupGGhhIzgOd6K1J9E_6xYJKxcb3Jh-G-MiPB7TedeHZw7Yjw9vMjmrIfQoQ1r9dK_vDHXrgGxslHS43kNKHIjcQXFic50CnZHv4repuvX210MRGxjdORU9_v2LCb2DYmTSnQyWYFcBV6PmkyABFaOxGgF_yIu6WKiv2tbJVs1WPbYpUdwzDwkrqtG4JFRkTR4GXlsGtdDWiRirbAm85SAeR7Wbj11vMKh-4n1S3iobd");'
+              ></div>
+            </a>
           </div>
         </div>
+        -->
+
       </div>
     </div>
     <footer class="flex justify-center">
       <div class="flex max-w-[960px] flex-1 flex-col">
         <footer class="flex flex-col gap-6 px-5 py-10 text-center @container">
           <div class="flex flex-wrap justify-center gap-4">
-            <a href="#">
+            <a href="https://www.youtube.com/@milson-antonio" target="_blank">
               <div class="text-black" data-icon="YoutubeLogo" data-size="24px" data-weight="regular">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
                   <path
@@ -174,7 +266,7 @@
                 </svg>
               </div>
             </a>
-            <a href="#">
+            <a href="https://www.linkedin.com/in/milson-antonio/" target="_blank">
               <div class="text-black" data-icon="LinkedinLogo" data-size="24px" data-weight="regular">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
                   <path
@@ -183,7 +275,7 @@
                 </svg>
               </div>
             </a>
-            <a href="#">
+            <a href="https://github.com/milson-antonio" target="_blank">
               <div class="text-black" data-icon="GithubLogo" data-size="24px" data-weight="regular">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
                   <path

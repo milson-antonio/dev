@@ -1,0 +1,272 @@
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+            rel="stylesheet"
+            as="style"
+            onload="this.rel='stylesheet'"
+            href="https://fonts.googleapis.com/css2?display=swap&amp;family=Newsreader%3Awght%40400%3B500%3B700%3B800&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"/>
+    <title>Milson António</title>
+    <link rel="icon" type="image/x-icon" href="../../static/imgs/code.ico" />
+    <link rel="stylesheet" href="../../static/css/prism.css" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <style>
+      /* Menu underline animation */
+      .menu-link {
+        position: relative;
+      }
+      .menu-link::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -2px;
+        left: 0;
+        background-color: #000;
+        transition: width 0.3s ease;
+      }
+      .menu-link:hover::after {
+        width: 100%;
+      }
+
+      /* Logo zoom animation */
+      .logo-container {
+        transition: transform 0.3s ease;
+      }
+      .logo-container:hover {
+        transform: scale(1.05);
+      }
+
+      /* Code toolbar styling */
+      div.code-toolbar {
+        position: relative;
+      }
+
+      div.code-toolbar > .toolbar {
+        position: absolute;
+        top: 0.3em;
+        right: 0.3em;
+        transition: opacity 0.3s ease-in-out;
+        opacity: 1;
+      }
+
+      div.code-toolbar:hover > .toolbar {
+        opacity: 1;
+      }
+
+      div.code-toolbar > .toolbar > .toolbar-item {
+        display: inline-block;
+      }
+
+      div.code-toolbar > .toolbar > .toolbar-item > button {
+        background: #2d2d2d;
+        border: 1px solid #4f4f4f;
+        color: #bbb;
+        font-size: 0.8em;
+        padding: 0.3em 0.7em;
+        border-radius: 0.3em;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      div.code-toolbar > .toolbar > .toolbar-item > button:hover,
+      div.code-toolbar > .toolbar > .toolbar-item > button:focus {
+        background: #3e3e3e;
+        color: #fff;
+      }
+    </style>
+</head>
+<body>
+<div class="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden" style='font-family: Newsreader, "Noto Sans", sans-serif;'>
+    <div class="layout-container flex h-full grow flex-col">
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f2f2f2] px-10 py-3">
+      <div class="flex items-center gap-4 text-black logo-container">
+          <a href="../../index.html">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="Code--Streamline-Font-Awesome" height="28" width="28">
+                  <desc>
+                      Code Streamline Icon: https://streamlinehq.com
+                  </desc>
+                  <path d="M9.783740000000002 1.7569125c-0.4165325 -0.12006 -0.8502175 0.12251000000000001 -0.9702775000000001 0.5390425L5.6772175 13.2728125c-0.1200575 0.4165325 0.12251000000000001 0.850215 0.5390425 0.970275s0.8502175 -0.12251000000000001 0.9702775000000001 -0.5390425l3.136245 -10.976857500000001c0.1200575 -0.4165325 -0.12251000000000001 -0.850215 -0.5390425 -0.970275Zm1.9748525000000001 2.94268c-0.3062725 0.3062725 -0.3062725 0.8036625000000002 0 1.1099375L13.946615000000001 8l-2.1904725 2.1904725c-0.3062725 0.3062725 -0.3062725 0.8036625000000002 0 1.109935s0.8036625000000002 0.306275 1.1099375 0l2.7442150000000005 -2.7442150000000005c0.3062725 -0.3062725 0.3062725 -0.8036625000000002 0 -1.109935L12.86608 4.7020425c-0.306275 -0.306275 -0.8036625000000002 -0.306275 -1.1099375 0Zm-7.514735000000001 0c-0.306275 -0.306275 -0.8036625000000002 -0.306275 -1.1099375 0L0.389705 7.4438075c-0.3062725 0.3062725 -0.3062725 0.8036625000000002 0 1.109935l2.7442150000000005 2.7442150000000005c0.306275 0.306275 0.8036625000000002 0.306275 1.1099375 0s0.3062725 -0.8036625000000002 0 -1.1099375L2.053385 8l2.1904725 -2.1904725c0.3062725 -0.3062725 0.3062725 -0.8036625000000002 0 -1.109935Z" fill="#000000" stroke-width="0.025"></path>
+              </svg>
+          </a>
+        <a href="../../index.html">
+          <h2 class="text-black text-lg font-bold leading-tight tracking-[-0.015em]">Milson António 🇦🇴 </h2>
+        </a>
+      </div>
+      <div class="flex flex-1 justify-end gap-8">
+        <div class="flex items-center gap-9">
+          <a class="text-black text-sm font-medium leading-normal menu-link" href="../../index.html">Home</a>
+          <a class="text-black text-sm font-medium leading-normal menu-link" href="../../about.html">About</a>
+        </div>
+      </div>
+    </header>
+        <div class="px-40 flex flex-1 justify-center py-5">
+            <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+                <div class="@container">
+                    <div class="@[480px]:px-4 @[480px]:py-3">
+                        <div
+                                class="w-full bg-center bg-no-repeat bg-cover flex flex-col justify-end overflow-hidden bg-white @[480px]:rounded-xl min-h-80"
+                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCrtNjdnrrQyQjTG-T5U10rUg-9SFBtRRAFk-U9_JO0kqEg2tuWiEfhhYUl6gzfAREOV6Zut1xuWvoWitut1Y3OcdSorRqEKjshRu84nEXLbKCqLjrNL-vCnz37NohdNmYiBJRKPO1PdHCl9fovo2e0aKlbEmGnhalj5LALu2XvTc0rzPTERW6XfATrreyZ3lNlk4CwR8BuId6T6XXYRcZ2xImA-RDdcD9eniUBaFabFFZ5s7faZvxutNim6noO1KWetgHJHrOdqUsE");'
+                        ></div>
+                    </div>
+                </div>
+                <h2 class="text-[#141414] tracking-light text-[28px] font-bold leading-tight px-4 text-left pb-3 pt-5">
+                    Building a Scalable E-commerce Platform with Modern Technologies
+                </h2>
+                <p class="text-[#757575] text-sm font-normal leading-normal pb-3 pt-1 px-4">Published on January 15, 2024 · 12 min read</p>
+                <div class="flex gap-3 p-3 flex-wrap pr-4">
+                    <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#f2f2f2] pl-4 pr-4">
+                        <p class="text-[#141414] text-sm font-medium leading-normal">React</p>
+                    </div>
+                    <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#f2f2f2] pl-4 pr-4">
+                        <p class="text-[#141414] text-sm font-medium leading-normal">Node.js</p>
+                    </div>
+                    <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#f2f2f2] pl-4 pr-4">
+                        <p class="text-[#141414] text-sm font-medium leading-normal">PostgreSQL</p>
+                    </div>
+                    <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#f2f2f2] pl-4 pr-4">
+                        <p class="text-[#141414] text-sm font-medium leading-normal">AWS</p>
+                    </div>
+                    <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#f2f2f2] pl-4 pr-4">
+                        <p class="text-[#141414] text-sm font-medium leading-normal">Docker</p>
+                    </div>
+                </div>
+                <p class="text-[#141414] text-base font-normal leading-normal pb-3 pt-20 px-4">
+                    In this article, we'll explore the process of building a scalable e-commerce platform using a modern technology stack. We'll cover the key architectural decisions,
+                    the technologies used, and the challenges faced during development. This platform is designed to handle a large number of users and transactions while maintaining
+                    high performance and reliability.
+                </p>
+                <h3 class="text-[#141414] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Architecture Overview</h3>
+                <p class="text-[#141414] text-base font-normal leading-normal pb-3 pt-1 px-4">
+                    The platform follows a microservices architecture, where different functionalities are separated into independent services. This approach allows for better
+                    scalability, maintainability, and fault isolation. The core services include: User Service, Product Service, Order Service, Payment Service, and Notification Service.
+                    Each service is responsible for a specific aspect of the platform and communicates with other services through APIs.
+                </p>
+                <h3 class="text-[#141414] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Technology Stack</h3>
+                <p class="text-[#141414] text-base font-normal leading-normal pb-3 pt-1 px-4">
+                    The technology stack chosen for this project includes: React for the front-end, Node.js with Express for the back-end services, PostgreSQL for the database, AWS for
+                    cloud infrastructure, and Docker for containerization. This combination provides a robust and scalable foundation for the platform.
+                </p>
+
+                <h3 class="text-[#141414] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Example Java Code</h3>
+                <p class="text-[#141414] text-base font-normal leading-normal pb-3 pt-1 px-4">
+                    Below is an example of a Java class that implements a simple e-commerce product service:
+                </p>
+                <pre class="language-java mx-4 rounded-md" data-toolbar-order="copy-to-clipboard"><code>
+/**
+ * A simple product service implementation for our e-commerce platform.
+ */
+public class ProductService {
+    private final ProductRepository repository;
+    private final CacheService cacheService;
+
+    public ProductService(ProductRepository repository, CacheService cacheService) {
+        this.repository = repository;
+        this.cacheService = cacheService;
+    }
+
+    /**
+     * Retrieves a product by its ID.
+     * First checks the cache, then falls back to the database.
+     */
+    public Product getProductById(Long id) {
+        // Try to get from cache first
+        String cacheKey = "product:" + id;
+        Product product = cacheService.get(cacheKey, Product.class);
+
+        if (product == null) {
+            // Not in cache, get from database
+            product = repository.findById(id)
+                .orElseThrow(() -> new ProductNotFoundException("Product not found with id: " + id));
+
+            // Store in cache for future requests
+            cacheService.put(cacheKey, product, 3600); // Cache for 1 hour
+        }
+
+        return product;
+    }
+
+    /**
+     * Creates a new product in the system.
+     */
+    public Product createProduct(Product product) {
+        // Validate product data
+        validateProduct(product);
+
+        // Save to database
+        Product savedProduct = repository.save(product);
+
+        // Invalidate any relevant caches
+        cacheService.invalidate("products:list");
+
+        return savedProduct;
+    }
+
+    private void validateProduct(Product product) {
+        if (product.getName() == null || product.getName().trim().isEmpty()) {
+            throw new IllegalArgumentException("Product name cannot be empty");
+        }
+
+        if (product.getPrice() == null || product.getPrice().compareTo(BigDecimal.ZERO) <= 0) {
+            throw new IllegalArgumentException("Product price must be greater than zero");
+        }
+    }
+}
+</code></pre>
+
+                <h3 class="text-[#141414] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Challenges and Solutions</h3>
+                <p class="text-[#141414] text-base font-normal leading-normal pb-3 pt-1 px-4">
+                    During the development of this platform, we faced several challenges, including managing inter-service communication, ensuring data consistency across services, and
+                    optimizing performance for high traffic. We addressed these challenges by implementing asynchronous communication using message queues, employing database
+                    transactions for data consistency, and utilizing caching mechanisms to improve performance.
+                </p>
+                <h3 class="text-[#141414] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Conclusion</h3>
+                <p class="text-[#141414] text-base font-normal leading-normal pb-3 pt-1 px-4">
+                    Building a scalable e-commerce platform requires careful planning and the use of appropriate technologies. The microservices architecture, combined with a modern
+                    technology stack, provides a solid foundation for handling the demands of a large user base. By addressing challenges proactively and implementing best practices, we
+                    can create a platform that is both scalable and reliable.
+                </p>
+            </div>
+        </div>
+        <footer class="flex justify-center">
+            <div class="flex max-w-[960px] flex-1 flex-col">
+                <footer class="flex flex-col gap-6 px-5 py-10 text-center @container">
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <a href="https://www.youtube.com/@milson-antonio" target="_blank">
+                            <div class="text-black" data-icon="YoutubeLogo" data-size="24px" data-weight="regular">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                                    <path
+                                            d="M164.44,121.34l-48-32A8,8,0,0,0,104,96v64a8,8,0,0,0,12.44,6.66l48-32a8,8,0,0,0,0-13.32ZM120,145.05V111l25.58,17ZM234.33,69.52a24,24,0,0,0-14.49-16.4C185.56,39.88,131,40,128,40s-57.56-.12-91.84,13.12a24,24,0,0,0-14.49,16.4C19.08,79.5,16,97.74,16,128s3.08,48.5,5.67,58.48a24,24,0,0,0,14.49,16.41C69,215.56,120.4,216,127.34,216h1.32c6.94,0,58.37-.44,91.18-13.11a24,24,0,0,0,14.49-16.41c2.59-10,5.67-28.22,5.67-58.48S236.92,79.5,234.33,69.52Zm-15.49,113a8,8,0,0,1-4.77,5.49c-31.65,12.22-85.48,12-86,12H128c-.54,0-54.33.2-86-12a8,8,0,0,1-4.77-5.49C34.8,173.39,32,156.57,32,128s2.8-45.39,5.16-54.47A8,8,0,0,1,41.93,68c30.52-11.79,81.66-12,85.85-12h.27c.54,0,54.38-.18,86,12a8,8,0,0,1,4.77,5.49C221.2,82.61,224,99.43,224,128S221.2,173.39,218.84,182.47Z"
+                                    ></path>
+                                </svg>
+                            </div>
+                        </a>
+                        <a href="https://www.linkedin.com/in/milson-antonio/" target="_blank">
+                            <div class="text-black" data-icon="LinkedinLogo" data-size="24px" data-weight="regular">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                                    <path
+                                            d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"
+                                    ></path>
+                                </svg>
+                            </div>
+                        </a>
+                        <a href="https://github.com/milson-antonio" target="_blank">
+                            <div class="text-black" data-icon="GithubLogo" data-size="24px" data-weight="regular">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                                    <path
+                                            d="M208.31,75.68A59.78,59.78,0,0,0,202.93,28,8,8,0,0,0,196,24a59.75,59.75,0,0,0-48,24H124A59.75,59.75,0,0,0,76,24a8,8,0,0,0-6.93,4,59.78,59.78,0,0,0-5.38,47.68A58.14,58.14,0,0,0,56,104v8a56.06,56.06,0,0,0,48.44,55.47A39.8,39.8,0,0,0,96,192v8H72a24,24,0,0,1-24-24A40,40,0,0,0,8,136a8,8,0,0,0,0,16,24,24,0,0,1,24,24,40,40,0,0,0,40,40H96v16a8,8,0,0,0,16,0V192a24,24,0,0,1,48,0v40a8,8,0,0,0,16,0V192a39.8,39.8,0,0,0-8.44-24.53A56.06,56.06,0,0,0,216,112v-8A58.14,58.14,0,0,0,208.31,75.68ZM200,112a40,40,0,0,1-40,40H112a40,40,0,0,1-40-40v-8a41.74,41.74,0,0,1,6.9-22.48A8,8,0,0,0,80,73.83a43.81,43.81,0,0,1,.79-33.58,43.88,43.88,0,0,1,32.32,20.06A8,8,0,0,0,119.82,64h32.35a8,8,0,0,0,6.74-3.69,43.87,43.87,0,0,1,32.32-20.06A43.81,43.81,0,0,1,192,73.83a8.09,8.09,0,0,0,1,7.65A41.72,41.72,0,0,1,200,104Z"
+                                    ></path>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                    <p class="text-black text-base font-normal leading-normal">@2025 Milson António. All rights reserved.</p>
+                </footer>
+            </div>
+        </footer>
+    </div>
+</div>
+    <script src="../../static/js/prism.js"></script>
+</body>
+</html>
